@@ -1,6 +1,6 @@
 # alluviam
 
-Realtime streaming search with Kafka Streams and Elasticsearch
+Realtime streaming search with Kafka Streams
 
 ### Introduction
 Alluviam provides a clean, scalable architecture for real-time search on streaming text. Realtime search can 
