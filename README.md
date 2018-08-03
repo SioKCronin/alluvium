@@ -14,14 +14,14 @@ stream of text. Challenges emerge as additional processing is added beyond ident
 queries, and it is these edge cases that alluviam seeks to address. 
 
 ### Architecture
-* **AWS (S3)**: Data
-* **Flask-Socket.io**: Frontend
+* **AWS (S3)**: Docs + Queries (simulated data firehoses)
 * **Kakfa Streams**: Scalable, fault-tolerant, low-latency streaming
-* **Elasticsearch**: Text indexing (Percolator queries) and tokenization
+* **Elasticsearch**: Document tokenization + text indexing (Percolator queries)
+* **Flask-Socket.io**: Server socket connection to browser
 
 ### Dataset
 * 31 million registered users, although only about 119K active users making at least 1 edit/month
-* 3TB of Wikipedia revision log data (xml archive dumps)
+* 1TB of Wikipedia revision log data (xml archive dump)
 * 10-20 changes/second from the RCFeed (can speed up using the historical data for velocity)
 * 29 million pages (reduce to 10 million that are in the encyclopedia, and 4.2 million are articles, stubs and 
 disambiguation pages) 
@@ -29,12 +29,11 @@ disambiguation pages)
 * Archived data: https://dumps.wikimedia.org/enwiki/latest/
 
 ### Engineering Challenges
-
+* Decouple the scalability, the latency, and the availability of our stream processing application with an external database
 * Elasticsearch integration with Kafka Streams
 * Producer tuning (compression, batch size) 
 * Broker tuning (leader balancing)
-* Consumer tuning ( 
-
+* Consumer tuning
 
 #### Specs/Constraints
-* Presently sift can return match results at a rate of 0 records/second (room for improvement!)
+* Presently, can return match results at a rate of 0 records/second (room for improvement!)
