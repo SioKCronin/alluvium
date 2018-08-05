@@ -15,7 +15,7 @@ queries, and it is these edge cases that alluviam seeks to address.
 
 ### Architecture
 * **AWS (S3)**: Docs + Queries (simulated data firehoses)
-* **Kakfa Streams**: Scalable, fault-tolerant, low-latency streaming
+* **Kakfa**: Scalable, fault-tolerant, low-latency streaming
 * **Elasticsearch**: Document tokenization + text indexing (Percolator queries)
 * **Flask-Socket.io**: Server socket connection to browser
 
