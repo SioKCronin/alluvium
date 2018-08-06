@@ -1,6 +1,6 @@
 # alluviam
 
-Realtime streaming search with Kafka Streams
+Realtime streaming search with Kafka and Elasticsearch
 
 ### Introduction
 Alluviam provides a clean, scalable architecture for real-time search on streaming text. Realtime search can 
@@ -15,7 +15,7 @@ queries, and it is these edge cases that alluviam seeks to address.
 
 ### Architecture
 * **AWS (S3)**: Docs + Queries (simulated data firehoses)
-* **Kakfa Streams**: Scalable, fault-tolerant, low-latency streaming
+* **Kakfa**: Scalable, fault-tolerant, low-latency streaming
 * **Elasticsearch**: Document tokenization + text indexing (Percolator queries)
 * **Flask-Socket.io**: Server socket connection to browser
 
