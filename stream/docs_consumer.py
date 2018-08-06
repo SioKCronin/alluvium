@@ -4,6 +4,8 @@ import time
 import os
 from datetime import datetime
 from kafka import KafkaConsumer
+from elasticsearch import Elasticsearch
+
 
 conn = 'ec2-52-13-241-228.us-west-2.compute.amazonaws.com:9092'
 term = "tired"
@@ -19,3 +21,4 @@ if __name__ == "__main__":
         if term in data['tokens']:
             print("Found it in {} ms".format(int(round(time.time() * 1000)) - msg.timestamp))
             # This is where you would send to Redis the info)
+
