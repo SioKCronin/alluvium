@@ -14,6 +14,7 @@ def main():
 
     producer = KafkaProducer(bootstrap_servers=conn)
 
+    #Keep it looping: for i in 1000:
     for line in smart_open('s3://alluvium-data/mvp_docs.json'):
         print(line)
         producer.send('docs', line)

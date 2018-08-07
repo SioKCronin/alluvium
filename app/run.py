@@ -12,12 +12,11 @@ if __name__=="__main__":
         if line.find("=")!=-1:
             ls = line.split("=")
             config[ls[0]]=ls[1]
-    config["debug"]=args.debug
 
     # get the app and clear the redis db
     app = get_alluvium_app(config)
     redis_connection = redis.Redis(connection_pool=app.pool)
     redis_connection.flushall()
-    sockeio.run(app)
+    # sockeio.run(app)
     app.run(host='0.0.0.0', port=5000, debug = args.debug)
 

@@ -1,9 +1,11 @@
 import hashlib
+import redis
 from flask import Flask, session, render_template
 from flask_socketio import SocketIO, send
 from query_subscriber import QuerySubscriber
 from views import attach_views
 from datetime import datetime
+from kafka import KafkaProducer
 
 class AlluviumAppBase:
 
@@ -35,9 +37,7 @@ class AlluviumAppBase:
 
         def redis_message_handler(msg):    
 
-            # get channel and content of incoming message
-            # channel = user_id
-            # data = query term
+            redis_connection = redis.Redis(connection_pool=app.pool)
             channel = msg['channel']
             data = msg['data']
 
@@ -63,9 +63,9 @@ class AlluviumAppBase:
             kafka = KafkaClient("{0}:{1}".format(config["zookeeper_host"], 9092))
             app.producer = SimpleProducer(kafka)
 
-            # add the app
-            self.app = app
-            
+        # add the app
+        self.app = app
+
         def clear_user(self, uid):
             redis_connection = redis.Redis(connection_pool=self.app.pool)
             # find all the queries to which the user is subscribed
@@ -85,6 +85,5 @@ class AlluviumAppBase:
 def get_alluvium_app(config):
     base = AlluviumAppBase(config)
     app = base.app
-    app.clear_user = base.clear_user
     attach_views(app)
     return app
