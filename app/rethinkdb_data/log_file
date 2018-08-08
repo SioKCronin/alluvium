@@ -1,0 +1,118 @@
+2018-08-06T21:24:13.224679000 0.258749s notice: Recursively removing directory /Users/siobhan/Code/flask-rethinkdb-chat/rethinkdb_data/tmp
+2018-08-06T21:24:13.228317000 0.262393s notice: Initializing directory /Users/siobhan/Code/flask-rethinkdb-chat/rethinkdb_data
+2018-08-06T21:24:13.228481000 0.262551s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/Users/siobhan/Code/flask-rethinkdb-chat/rethinkdb_data' did not already exist or is empty.)
+2018-08-06T21:24:13.228551000 0.262620s notice: Running rethinkdb 2.3.6 (CLANG 9.0.0 (clang-900.0.37))...
+2018-08-06T21:24:13.235216000 0.269286s notice: Running on Darwin 17.7.0 x86_64
+2018-08-06T21:24:13.235327000 0.269397s notice: Loading data from directory /Users/siobhan/Code/flask-rethinkdb-chat/rethinkdb_data
+2018-08-06T21:24:13.436499000 0.470562s info: Automatically using cache size of 100 MB
+2018-08-06T21:24:13.436516000 0.470578s warn: Cache size is very low and may impact performance.
+2018-08-06T21:24:13.444116000 0.478179s notice: Listening for intracluster connections on port 29015
+2018-08-06T21:24:13.448003000 0.482066s notice: Listening for client driver connections on port 28015
+2018-08-06T21:24:13.448396000 0.482459s notice: Listening for administrative HTTP connections on port 8080
+2018-08-06T21:24:13.448415000 0.482477s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2018-08-06T21:24:13.448430000 0.482492s notice: Listening on driver addresses: 127.0.0.1, ::1
+2018-08-06T21:24:13.448435000 0.482497s notice: Listening on http addresses: 127.0.0.1, ::1
+2018-08-06T21:24:13.448448000 0.482511s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2018-08-06T21:24:13.448462000 0.482524s notice: Server ready, "MacBook_Air_2_local_eq9" 767b0ac5-7734-47b3-8265-2cce265be8cb
+2018-08-06T21:33:16.527918000 543.545690s notice: Server got SIGINT from pid 8973, uid 501; shutting down...
+2018-08-06T21:33:16.528229000 543.546000s notice: Shutting down client connections...
+2018-08-06T21:33:16.528526000 543.546297s notice: All client connections closed.
+2018-08-06T21:33:16.528554000 543.546325s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2018-08-06T21:33:16.540385000 543.558156s notice: Storage engine shut down.
+2018-08-06T21:33:26.049601000 0.149396s notice: Running rethinkdb 2.3.6 (CLANG 9.0.0 (clang-900.0.37))...
+2018-08-06T21:33:26.058537000 0.158326s notice: Running on Darwin 17.7.0 x86_64
+2018-08-06T21:33:26.058627000 0.158415s notice: Loading data from directory /Users/siobhan/Code/flask-rethinkdb-chat/rethinkdb_data
+2018-08-06T21:33:26.116628000 0.216415s info: Automatically using cache size of 361 MB
+2018-08-06T21:33:26.118019000 0.217806s notice: Listening for intracluster connections on port 29015
+2018-08-06T21:33:26.121949000 0.221737s notice: Listening for client driver connections on port 28015
+2018-08-06T21:33:26.122354000 0.222142s notice: Listening for administrative HTTP connections on port 8080
+2018-08-06T21:33:26.122363000 0.222150s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2018-08-06T21:33:26.122377000 0.222164s notice: Listening on driver addresses: 127.0.0.1, ::1
+2018-08-06T21:33:26.122383000 0.222169s notice: Listening on http addresses: 127.0.0.1, ::1
+2018-08-06T21:33:26.122396000 0.222183s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2018-08-06T21:33:26.122410000 0.222197s notice: Server ready, "MacBook_Air_2_local_eq9" 767b0ac5-7734-47b3-8265-2cce265be8cb
+2018-08-06T21:33:38.854662000 12.954067s info: Table d7d3ba68-cada-4b86-b427-8cab93f72860: Starting a new Raft election for term 1.
+2018-08-06T21:33:38.855619000 12.955024s info: Table d7d3ba68-cada-4b86-b427-8cab93f72860: Added replica on this server.
+2018-08-06T21:33:38.887592000 12.986996s info: Table d7d3ba68-cada-4b86-b427-8cab93f72860: This server is Raft leader for term 1. Latest log index is 0.
+2018-08-06T21:33:39.438831000 13.538219s info: Table d7d3ba68-cada-4b86-b427-8cab93f72860: Configuration is changing.
+2018-08-07T06:43:45.724779000 2515.715691s notice: Server got SIGINT from pid 8973, uid 501; shutting down...
+2018-08-07T06:43:45.725050000 2515.715956s notice: Shutting down client connections...
+2018-08-07T06:43:45.725341000 2515.716247s notice: All client connections closed.
+2018-08-07T06:43:45.725353000 2515.716259s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2018-08-07T06:43:45.745640000 2515.736545s notice: Storage engine shut down.
+2018-08-07T06:43:47.809360000 0.028665s notice: Running rethinkdb 2.3.6 (CLANG 9.0.0 (clang-900.0.37))...
+2018-08-07T06:43:47.822299000 0.041597s notice: Running on Darwin 17.7.0 x86_64
+2018-08-07T06:43:47.822458000 0.041754s notice: Loading data from directory /Users/siobhan/Code/flask-rethinkdb-chat/rethinkdb_data
+2018-08-07T06:43:47.886491000 0.105785s info: Automatically using cache size of 474 MB
+2018-08-07T06:43:47.887524000 0.106818s notice: Listening for intracluster connections on port 29015
+2018-08-07T06:43:47.916649000 0.135942s notice: Listening for client driver connections on port 28015
+2018-08-07T06:43:47.916896000 0.136189s notice: Listening for administrative HTTP connections on port 8080
+2018-08-07T06:43:47.916901000 0.136194s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2018-08-07T06:43:47.916904000 0.136197s notice: Listening on driver addresses: 127.0.0.1, ::1
+2018-08-07T06:43:47.916908000 0.136200s notice: Listening on http addresses: 127.0.0.1, ::1
+2018-08-07T06:43:47.916926000 0.136219s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2018-08-07T06:43:47.916930000 0.136223s notice: Server ready, "MacBook_Air_2_local_eq9" 767b0ac5-7734-47b3-8265-2cce265be8cb
+2018-08-07T06:43:49.361130000 1.580379s info: Table d7d3ba68-cada-4b86-b427-8cab93f72860: Starting a new Raft election for term 2.
+2018-08-07T06:43:49.393815000 1.613064s info: Table d7d3ba68-cada-4b86-b427-8cab93f72860: This server is Raft leader for term 2. Latest log index is 4.
+2017-12-31T16:04:18.419370000 0.038067s notice: Running rethinkdb 2.3.6 (CLANG 9.0.0 (clang-900.0.37))...
+2017-12-31T16:04:18.425660000 0.044354s notice: Running on Darwin 17.7.0 x86_64
+2017-12-31T16:04:18.425737000 0.044429s notice: Loading data from directory /Users/siobhan/Code/flask-rethinkdb-chat/rethinkdb_data
+2017-12-31T16:04:18.509717000 0.128410s info: Automatically using cache size of 2176 MB
+2017-12-31T16:04:18.511973000 0.130666s notice: Listening for intracluster connections on port 29015
+2017-12-31T16:04:18.541728000 0.160421s notice: Listening for client driver connections on port 28015
+2017-12-31T16:04:18.541920000 0.160612s notice: Listening for administrative HTTP connections on port 8080
+2017-12-31T16:04:18.541924000 0.160617s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2017-12-31T16:04:18.541928000 0.160621s notice: Listening on driver addresses: 127.0.0.1, ::1
+2017-12-31T16:04:18.541931000 0.160623s notice: Listening on http addresses: 127.0.0.1, ::1
+2017-12-31T16:04:18.541948000 0.160641s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2017-12-31T16:04:18.541960000 0.160652s notice: Server ready, "MacBook_Air_2_local_eq9" 767b0ac5-7734-47b3-8265-2cce265be8cb
+2017-12-31T16:04:18.626064000 0.244757s warn: Problem when checking for new versions of RethinkDB: HTTP request to update.rethinkdb.com failed.
+2017-12-31T16:04:19.932679000 1.551373s info: Table d7d3ba68-cada-4b86-b427-8cab93f72860: Starting a new Raft election for term 3.
+2017-12-31T16:04:19.972949000 1.591643s info: Table d7d3ba68-cada-4b86-b427-8cab93f72860: This server is Raft leader for term 3. Latest log index is 7.
+2018-08-07T09:47:57.335237000 2033.184640s notice: Server got SIGINT from pid 629, uid 501; shutting down...
+2018-08-07T09:47:57.335454000 2033.184856s notice: Shutting down client connections...
+2018-08-07T09:47:57.335537000 2033.184939s notice: All client connections closed.
+2018-08-07T09:47:57.335542000 2033.184944s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2018-08-07T09:47:57.343024000 2033.192426s notice: Storage engine shut down.
+2018-08-07T09:47:59.127104000 0.009705s notice: Running rethinkdb 2.3.6 (CLANG 9.0.0 (clang-900.0.37))...
+2018-08-07T09:47:59.133073000 0.015671s notice: Running on Darwin 17.7.0 x86_64
+2018-08-07T09:47:59.133154000 0.015750s notice: Loading data from directory /Users/siobhan/Code/flask-rethinkdb-chat/rethinkdb_data
+2018-08-07T09:47:59.190276000 0.072873s info: Automatically using cache size of 836 MB
+2018-08-07T09:47:59.190942000 0.073539s notice: Listening for intracluster connections on port 29015
+2018-08-07T09:47:59.212289000 0.094886s notice: Listening for client driver connections on port 28015
+2018-08-07T09:47:59.212545000 0.095142s notice: Listening for administrative HTTP connections on port 8080
+2018-08-07T09:47:59.212549000 0.095146s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2018-08-07T09:47:59.212552000 0.095148s notice: Listening on driver addresses: 127.0.0.1, ::1
+2018-08-07T09:47:59.212554000 0.095151s notice: Listening on http addresses: 127.0.0.1, ::1
+2018-08-07T09:47:59.212676000 0.095272s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2018-08-07T09:47:59.212678000 0.095275s notice: Server ready, "MacBook_Air_2_local_eq9" 767b0ac5-7734-47b3-8265-2cce265be8cb
+2018-08-07T09:48:00.647060000 1.529657s info: Table d7d3ba68-cada-4b86-b427-8cab93f72860: Starting a new Raft election for term 4.
+2018-08-07T09:48:00.686867000 1.569464s info: Table d7d3ba68-cada-4b86-b427-8cab93f72860: This server is Raft leader for term 4. Latest log index is 10.
+2018-08-07T14:54:33.615286000 0.010427s notice: Running rethinkdb 2.3.6 (CLANG 9.0.0 (clang-900.0.37))...
+2018-08-07T14:54:33.623267000 0.018404s notice: Running on Darwin 17.7.0 x86_64
+2018-08-07T14:54:33.623357000 0.018494s notice: Loading data from directory /Users/siobhan/Code/flask-rethinkdb-chat/rethinkdb_data
+2018-08-07T14:54:33.682519000 0.077654s info: Automatically using cache size of 318 MB
+2018-08-07T14:54:33.683204000 0.078339s notice: Listening for intracluster connections on port 29015
+2018-08-07T14:54:33.705374000 0.100508s notice: Listening for client driver connections on port 28015
+2018-08-07T14:54:33.705631000 0.100765s notice: Listening for administrative HTTP connections on port 8080
+2018-08-07T14:54:33.705636000 0.100770s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2018-08-07T14:54:33.705638000 0.100772s notice: Listening on driver addresses: 127.0.0.1, ::1
+2018-08-07T14:54:33.705640000 0.100774s notice: Listening on http addresses: 127.0.0.1, ::1
+2018-08-07T14:54:33.705755000 0.100889s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2018-08-07T14:54:33.705758000 0.100892s notice: Server ready, "MacBook_Air_2_local_eq9" 767b0ac5-7734-47b3-8265-2cce265be8cb
+2018-08-07T14:54:34.756475000 1.151578s info: Table d7d3ba68-cada-4b86-b427-8cab93f72860: Starting a new Raft election for term 5.
+2018-08-07T14:54:34.785280000 1.180383s info: Table d7d3ba68-cada-4b86-b427-8cab93f72860: This server is Raft leader for term 5. Latest log index is 13.
+2018-08-07T20:22:11.545709000 0.070013s notice: Running rethinkdb 2.3.6 (CLANG 9.0.0 (clang-900.0.37))...
+2018-08-07T20:22:11.581002000 0.105300s notice: Running on Darwin 17.7.0 x86_64
+2018-08-07T20:22:11.581622000 0.105919s notice: Loading data from directory /Users/siobhan/Code/alluviam/app/rethinkdb_data
+2018-08-07T20:22:12.002457000 0.526741s info: Automatically using cache size of 1545 MB
+2018-08-07T20:22:12.009658000 0.533941s notice: Listening for intracluster connections on port 29015
+2018-08-07T20:22:12.064468000 0.588750s notice: Listening for client driver connections on port 28015
+2018-08-07T20:22:12.064660000 0.588941s notice: Listening for administrative HTTP connections on port 8080
+2018-08-07T20:22:12.064662000 0.588944s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2018-08-07T20:22:12.064668000 0.588950s notice: Listening on driver addresses: 127.0.0.1, ::1
+2018-08-07T20:22:12.064671000 0.588952s notice: Listening on http addresses: 127.0.0.1, ::1
+2018-08-07T20:22:12.064677000 0.588958s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2018-08-07T20:22:12.064682000 0.588964s notice: Server ready, "MacBook_Air_2_local_eq9" 767b0ac5-7734-47b3-8265-2cce265be8cb
+2018-08-07T20:22:13.636442000 2.160678s info: Table d7d3ba68-cada-4b86-b427-8cab93f72860: Starting a new Raft election for term 6.
+2018-08-07T20:22:13.664170000 2.188406s info: Table d7d3ba68-cada-4b86-b427-8cab93f72860: This server is Raft leader for term 6. Latest log index is 16.
