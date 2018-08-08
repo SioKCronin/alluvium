@@ -14,12 +14,12 @@ def main():
 
     producer = KafkaProducer(bootstrap_servers=conn)
 
-    #Keep it looping: for i in 1000:
-    for line in smart_open('s3://alluvium-data/mvp_docs.json'):
-        print(line)
-        producer.send('docs', line)
-        producer.flush()
-        #time.sleep(1)
+    for i in range(1000):
+        for line in smart_open('s3://alluvium-data/mvp_docs.json'):
+            print(line.strip())
+            producer.send('docs', line.strip())
+            producer.flush()
+            time.sleep(5)
 
 if __name__ == '__main__':
     main()

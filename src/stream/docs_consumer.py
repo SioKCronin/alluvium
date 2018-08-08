@@ -16,11 +16,6 @@ if __name__ == "__main__":
     queries = KafkaConsumer('queries', bootstrap_servers=conn)
     producer = KafkaConsumer('match', bootstrap_servers=conn)
 
-    # Create an inverted index
-
-    #for query in queries:
-    #  add to inverted index
-
     for msg in docs:
         data = json.loads(msg.value.decode("utf-8"))
         print(data['tokens'])
