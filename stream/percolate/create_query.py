@@ -2,7 +2,7 @@ from elasticsearch import Elasticsearch
 
 es = Elasticsearch()
 
-query =  {"query" : { "match" : {"message" : "bonsai"}}}
+query =  {"query" : { "match" : {"term" : "odio"}}}
 
 es.index(index="my-index", doc_type = "_doc", body=query, id="test4")
 
