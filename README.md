@@ -1,22 +1,24 @@
 # alluviam
 
-Realtime streaming search with Kafka and Elasticsearch
+Realtime streaming search in Python with Kafka and Elasticsearch
 
 ### Introduction
-Alluviam provides a clean, scalable architecture for real-time search on streaming text. Realtime search can 
+Alluviam provides a clean, scalable architecture in Python for realtime search on streaming text. Realtime search can 
 provide companies with the ability to monitor high velocity text feeds, with applications ranging from media
 monitoring to anti-vandelism/abuse detection.
 
-Achieving near real-time search in high volume streaming text data presents a unique set of engineering challenges. For example, 
-when we search in a static setting we typically create an index, which is often not feasible in high velocity streaming docs. 
-This limitation led to the development of reverse search strategies where queries are indexed and matched against a tokenized 
-stream of text. Challenges emerge as additional processing is added beyond identifying matches, as well as handling complex 
-queries, and it is these edge cases that alluviam seeks to address. 
+Achieving near real-time search in high volume streaming text data presents a unique set of engineering challenges. 
+For example, when we search in a static setting we typically create an index, which is often not feasible in high 
+velocity streaming docs. This limitation led to the development of reverse search strategies where queries are indexed 
+and matched against a tokenized stream of text. Challenges emerge as additional processing is added beyond 
+identifying matches, as well as handling complex queries, and it is these edge cases that alluviam seeks to address. 
 
 ### Architecture
 * **AWS (S3)**: Docs + Queries (simulated data firehoses)
-* **Kakfa**: Scalable, fault-tolerant, low-latency streaming
-* **Elasticsearch**: Document tokenization + text indexing (Percolator queries)
+* **Kakfa**: Scalable, fault-tolerant message delivery
+* **Storm**: Event-based stream processing
+* **Elasticsearch**: Document indexing with Percolator queries
+* **RethinkDB**: Data store
 * **Flask-Socket.io**: Server socket connection to browser
 
 ### Dataset
@@ -29,8 +31,7 @@ disambiguation pages)
 * Archived data: https://dumps.wikimedia.org/enwiki/latest/
 
 ### Engineering Challenges
-* Decouple the scalability, the latency, and the availability of our stream processing application with an external database
-* Elasticsearch integration with Kafka Streams
+* Elasticsearch integration with Kafka and STorm
 * Producer tuning (compression, batch size) 
 * Broker tuning (leader balancing)
 * Consumer tuning
