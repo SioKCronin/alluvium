@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}Alluvium{% endblock %}
+
+{% block body %}
+
+<div class="row">
+  <form class="col s12" id="chat-form" action="/search">
+    <div class="row">
+      <div class="input-field col s6">
+        <i class="material-icons prefix">mode_edit</i>
+        <input id="q" name="q" class="materialize-input" placeholder="Query term">
+      </div>
+      <div class="input-field col s3">
+        <button class="btn waves-effect waves-light" type="submit">Search
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+
+{% endblock %}
