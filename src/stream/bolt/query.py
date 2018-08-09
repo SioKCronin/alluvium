@@ -43,7 +43,7 @@ if __name__ == "__main__":
             for hit in res['hits']['hits']:
                 print("Found one!")
                 r.table("queries").insert({
-                    id: hit['_id'],
+                    query_id: hit['_id'],
                     article: data['article'],
                     user_id: data['user_id']
                 }).run(conn, callback)

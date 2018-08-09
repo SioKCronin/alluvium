@@ -13,12 +13,6 @@
 var resultList = document.getElementById('result-list');
 var socket = io('http://' + document.domain + ':' + location.port);
 
-// join room
-socket.on('connect', function() {
-    socket.emit('join', { room: '{{ room }}' });
-    console.log("Joined room");
-});
-
 // event handler for receiving a 'new_result' event on the socket.
 socket.on('new_result', function(data) {
   resultList.innerHTML = '<li class="collection-item">'+data.new_val.query+'</li>' + resultList.innerHTML;

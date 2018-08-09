@@ -1,4 +1,4 @@
-from flask import Flask, g, render_template, make_response, request, redirect, url_for, jsonify
+from flask import Flask, g, render_template, make_response, request, redirect, url_for, jsonify, session
 from flask_socketio import SocketIO, send, emit, join_room, leave_room
 from threading import Thread
 import rethinkdb as r
@@ -21,7 +21,7 @@ app.config.update(dict(
     SECRET_KEY='secret!',
     DB_HOST='localhost',
     DB_PORT=28015,
-    DB_NAME='chat'
+    DB_NAME='alluvium'
 ))
 app.config.from_envvar('FLASKR_SETTINGS', silent=True)
 
@@ -45,22 +45,24 @@ def teardown_request(exception):
 def create_search():
     data = {}
     data['query'] = request.args.get('q', '')
-    data['created'] = datetime.now(r.make_timezone('00:00'))
-    data['query_id'] = hashlib.md5(data['query'].encode('utf-8')).hexdigest()
-
+    #data['created'] = datetime.now(r.make_timezone('00:00'))
     if data.get('query'):
+        data['query_id'] = hashlib.md5(data['query'].encode('utf-8')).hexdigest()
+        session['query_id'] = data['query_id']
         # Publish data to Kafka queries topic
-        producer.send("queries", json.loads(data))
+        producer.send("queries", bytes(json.dumps(data).encode('utf-8')))
 
         #new_chat = r.table("queries").insert([ data ]).run(g.db_conn)
         return render_template('search.html', query=data['query'], room=data['query_id'])
     return make_response('no search param', 401)
 
-@socketio.on('join')
-def on_join(data):
-    room = data['room']
-    join_room(room)
-    send('Someone has entered the room.', room=room)
+@socketio.on('connect')
+def test_connect():
+    join_room(session['query_id'])
+
+@socketio.on('disconnect')
+def test_disconnect():
+    print('Client disconnected')
 
 # TODO: When socket disconnects, remove query from db (or set a timer)?
 
@@ -75,9 +77,13 @@ def watch_results():
                      db=app.config['DB_NAME'])
     feed = r.table("queries").changes().run(conn)
     for result in feed:
+        print(result)
         #result['new_val']['created'] = str(result['new_val']['created'])
         # emit to a specific client the results when they come into
         # rethinkdb for that client's query.
+        # read from the 'result' dict to provide client with 
+        # formatted results
+        # room = result['query_id']
         socketio.emit('new_result', result, room=room)
 
 if __name__ == "__main__":
