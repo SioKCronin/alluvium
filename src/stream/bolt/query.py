@@ -6,14 +6,20 @@ import os
 from datetime import datetime
 from kafka import KafkaConsumer
 from elasticsearch import Elasticsearch
+import rethinkdb as r
+import hashlib
 
-conn = 'ec2-52-13-241-228.us-west-2.compute.amazonaws.com:9092'
 
 if __name__ == "__main__":
 
-    docs = KafkaConsumer('docs', bootstrap_servers=conn)
-    producer = KafkaConsumer('match', bootstrap_servers=conn)
+    # ThinkDB connection
+    conn = r.connect()
 
+    # Listen to Kafka docs topic
+    c = 'ec2-52-13-241-228.us-west-2.compute.amazonaws.com:9092'
+    docs = KafkaConsumer('docs', bootstrap_servers=c)
+
+    # Create Elasticsearch instance
     es = Elasticsearch()
 
     for msg in docs:
@@ -24,11 +30,23 @@ if __name__ == "__main__":
                 "percolate" : {
                     "field" : "query",
                     "document" : {
-                        "message" : "{}".format(data['revision'])
+                        "message" : data['revision']
                     }
                 }
             }
         }
 
         res = es.search(index="my-index", doc_type="_doc", body=doc)
-        print(res)
+
+        # Write matches to RethinkDB
+        if res['hits']['total'] > 0:
+            for hit in res['hits']['hits']:
+                print("Found one!")
+                r.table("queries").insert({
+                    id: hit['_id'],
+                    article: data['article'],
+                    user_id: data['user_id']
+                }).run(conn, callback)
+
+        else:
+            print("Not match")

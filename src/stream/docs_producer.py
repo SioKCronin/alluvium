@@ -8,10 +8,10 @@ from smart_open import smart_open, s3_iter_bucket
 from kafka import KafkaProducer
 import time
 
-conn = 'ec2-52-13-241-228.us-west-2.compute.amazonaws.com:9092'
 
 def main():
 
+    conn = 'ec2-52-13-241-228.us-west-2.compute.amazonaws.com:9092'
     producer = KafkaProducer(bootstrap_servers=conn)
 
     for i in range(1000):
@@ -19,7 +19,7 @@ def main():
             print(line.strip())
             producer.send('docs', line.strip())
             producer.flush()
-            time.sleep(5)
+            time.sleep(1)
 
 if __name__ == '__main__':
     main()

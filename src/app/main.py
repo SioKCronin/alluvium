@@ -2,7 +2,7 @@ from flask import Flask, g, render_template, make_response, request, redirect, u
 from flask_socketio import SocketIO, send, emit, join_room, leave_room
 from threading import Thread
 import rethinkdb as r
-from rethinkdb import RqlRuntimeError
+from kafka import KafkaProducer
 import json
 from datetime import datetime
 import hashlib
@@ -11,6 +11,9 @@ app = Flask(__name__)
 socketio = SocketIO(app)
 global thread
 thread = None
+
+conn = 'ec2-52-13-241-228.us-west-2.compute.amazonaws.com:9092'
+producer = KafkaProducer(bootstrap_servers=conn)
 
 # Load default config and override config from an environment variable
 app.config.update(dict(
@@ -43,11 +46,14 @@ def create_search():
     data = {}
     data['query'] = request.args.get('q', '')
     data['created'] = datetime.now(r.make_timezone('00:00'))
-    data['room'] = hashlib.md5(data['query'].encode('utf-8')).hexdigest()
+    data['query_id'] = hashlib.md5(data['query'].encode('utf-8')).hexdigest()
+
     if data.get('query'):
-        # kick off the search process -- send query to Kafka producer
-        new_chat = r.table("chats").insert([ data ]).run(g.db_conn)
-        return render_template('search.html', query=data['query'], room=data['room'])
+        # Publish data to Kafka queries topic
+        producer.send("queries", json.loads(data))
+
+        #new_chat = r.table("queries").insert([ data ]).run(g.db_conn)
+        return render_template('search.html', query=data['query'], room=data['query_id'])
     return make_response('no search param', 401)
 
 @socketio.on('join')
@@ -67,12 +73,12 @@ def watch_results():
     conn = r.connect(host=app.config['DB_HOST'],
                      port=app.config['DB_PORT'],
                      db=app.config['DB_NAME'])
-    feed = r.table("chats").changes().run(conn)
+    feed = r.table("queries").changes().run(conn)
     for result in feed:
-        result['new_val']['created'] = str(result['new_val']['created'])
+        #result['new_val']['created'] = str(result['new_val']['created'])
         # emit to a specific client the results when they come into
         # rethinkdb for that client's query.
-        socketio.emit('new_result', result)
+        socketio.emit('new_result', result, room=room)
 
 if __name__ == "__main__":
     # Set up rethinkdb changefeeds before starting server
