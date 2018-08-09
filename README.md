@@ -1,9 +1,9 @@
-# alluviam
+# Alluvium
 
 Realtime streaming search in Python with Kafka and Elasticsearch
 
 ### Introduction
-Alluviam provides a clean, scalable architecture in Python for realtime search on streaming text. Realtime search can 
+Alluvium provides a clean, scalable architecture in Python for realtime search on streaming text. Realtime search can 
 provide companies with the ability to monitor high velocity text feeds, with applications ranging from media
 monitoring to anti-vandelism/abuse detection.
 
