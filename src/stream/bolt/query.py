@@ -38,15 +38,24 @@ if __name__ == "__main__":
 
         res = es.search(index="my-index", doc_type="_doc", body=doc)
 
+        match = json.loads(msg.value.decode('utf-8').strip(','))
+        #match = msg.value.decode('utf-8').strip(',')
+
+        print(match)
+        #print("User_id", match['user_id'])
+        #print("Article", match['article'])
+
         # Write matches to RethinkDB
         if res['hits']['total'] > 0:
             for hit in res['hits']['hits']:
                 print("Found one!")
-                r.table("queries").insert({
-                    query_id: hit['_id'],
-                    article: data['article'],
-                    user_id: data['user_id']
-                }).run(conn, callback)
+                #print(msg)
+
+                r.db("alluvium").table("queries").insert({
+                    "id": hit['_id'],
+                    "article": match['article'],
+                    "user_id": match['user_id']
+                }).run(conn)
 
         else:
             print("Not match")
