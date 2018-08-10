@@ -25,6 +25,8 @@ app.config.update(dict(
 ))
 app.config.from_envvar('FLASKR_SETTINGS', silent=True)
 
+'''
+Don't need these: 
 @app.before_request
 def before_request():
     try:
@@ -40,6 +42,7 @@ def teardown_request(exception):
         g.db_conn.close()
     except AttributeError:
         pass
+'''
 
 @app.route('/search', methods=['GET'])
 def create_search():
@@ -77,14 +80,12 @@ def watch_results():
                      db=app.config['DB_NAME'])
     feed = r.table("queries").changes().run(conn)
     for result in feed:
+        print("Found it")
         print(result)
         #result['new_val']['created'] = str(result['new_val']['created'])
         # emit to a specific client the results when they come into
         # rethinkdb for that client's query.
-        # read from the 'result' dict to provide client with 
-        # formatted results
-        # room = result['query_id']
-        socketio.emit('new_result', result, room=room)
+        socketio.emit('new_result', result, room=result['new_val']['query_id'])
 
 if __name__ == "__main__":
     # Set up rethinkdb changefeeds before starting server

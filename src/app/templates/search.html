@@ -15,7 +15,7 @@ var socket = io('http://' + document.domain + ':' + location.port);
 
 // event handler for receiving a 'new_result' event on the socket.
 socket.on('new_result', function(data) {
-  resultList.innerHTML = '<li class="collection-item">'+data.new_val.query+'</li>' + resultList.innerHTML;
+  resultList.innerHTML = '<li class="collection-item">'+data.new_val.article+" "+data.new_val.user_id+'</li>' + resultList.innerHTML;
 });
 
 // log general messages

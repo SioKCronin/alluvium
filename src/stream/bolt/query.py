@@ -13,7 +13,7 @@ import hashlib
 if __name__ == "__main__":
 
     # ThinkDB connection
-    conn = r.connect()
+    conn = r.connect(host='localhost', port='28015', db='alluvium')
 
     # Listen to Kafka docs topic
     c = 'ec2-52-13-241-228.us-west-2.compute.amazonaws.com:9092'
@@ -51,11 +51,14 @@ if __name__ == "__main__":
                 print("Found one!")
                 #print(msg)
 
-                r.db("alluvium").table("queries").insert({
-                    "id": hit['_id'],
+                #new_chat = r.table("chats").insert([ data ]).run(g.db_conn)
+
+                new_query = r.table("queries").insert([{
+                    "query_id": hit['_id'],
                     "article": match['article'],
                     "user_id": match['user_id']
-                }).run(conn)
+                }]).run(conn)
+                print(new_query)
 
         else:
             print("Not match")
