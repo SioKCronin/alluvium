@@ -1,7 +1,7 @@
 from elasticsearch import Elasticsearch
 import hashlib
 
-query_term = "lorem"
+query_term = "et"
 
 def build_query(term):
     query_id = hashlib.md5(query_term.encode('utf-8')).hexdigest() 

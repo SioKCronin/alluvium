@@ -23,7 +23,7 @@ if __name__ == "__main__":
     es = Elasticsearch()
 
     for msg in docs:
-        data = json.loads(msg.value.decode("utf-8").strip(','))
+        data = json.loads(msg.value.decode("utf-8").rstrip(','))
 
         doc = {
             "query" : {
