@@ -4,7 +4,7 @@
 
 {% block body %}
 
-<h5>Search results for {{ query }}</h5>
+<h5>Search results for <span class="blue-text">{{ query }}</span></h5>
 
 <ul id="result-list" class="collection"></ul>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
@@ -15,7 +15,7 @@ var socket = io('http://' + document.domain + ':' + location.port);
 
 // event handler for receiving a 'new_result' event on the socket.
 socket.on('new_result', function(data) {
-  resultList.innerHTML = '<li class="collection-item">'+data.new_val.article+" "+data.new_val.user_id+'</li>' + resultList.innerHTML;
+  resultList.innerHTML = '<li class="collection-item">'+'Article:'+data.new_val.article+'User ID:'+" "+data.new_val.user_id+'</li>' + resultList.innerHTML;
 });
 
 // log general messages
