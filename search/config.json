@@ -1,0 +1,26 @@
+{
+    "serializer": "json",
+    "topology_specs": "topologies/",
+    "virtualenv_specs": "virtualenvs/",
+    "envs": {
+        "prod": {
+            "user": "storm",
+            "ssh_password": "sio-IAM-keypair",
+            "nimbus": "ec2-35-166-94-230.us-west-2.compute.amazonaws.com",
+            "workers": [
+                "ec2-54-200-225-39.us-west-2.compute.amazonaws.com",
+                "ec2-54-69-199-186.us-west-2.compute.amazonaws.com",
+                "ec2-54-148-236-211.us-west-2.compute.amazonaws.com"
+            ],
+            "log": {
+                "path": "/var/log/storm/streamparse",
+                "file": "pystorm_{topology_name}_{component_name}_{task_id}_{pid}.log",
+                "max_bytes": 100000,
+                "backup_count": 10,
+                "level": "info"
+            },
+            "use_ssh_for_nimbus": true,
+            "virtualenv_root": "/data/virtualenvs/"
+        }
+    }
+}
