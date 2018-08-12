@@ -1,0 +1,37 @@
+2018-08-12T18:05:27.788113358 0.031439s notice: Recursively removing directory /home/ubuntu/alluvium/src/stream/bolt/rethinkdb_data/tmp
+2018-08-12T18:05:27.792345262 0.035670s notice: Initializing directory /home/ubuntu/alluvium/src/stream/bolt/rethinkdb_data
+2018-08-12T18:05:27.792404923 0.035729s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/home/ubuntu/alluvium/src/stream/bolt/rethinkdb_data' did not already exist or is empty.)
+2018-08-12T18:05:27.792459669 0.035784s notice: Running rethinkdb 2.3.6~0xenial (GCC 5.3.1)...
+2018-08-12T18:05:27.794521464 0.037847s notice: Running on Linux 4.4.0-1022-aws x86_64
+2018-08-12T18:05:27.794559447 0.037884s notice: Loading data from directory /home/ubuntu/alluvium/src/stream/bolt/rethinkdb_data
+2018-08-12T18:05:27.812954543 0.056279s info: Automatically using cache size of 2556 MB
+2018-08-12T18:05:27.813465891 0.056790s notice: Listening for intracluster connections on port 29015
+2018-08-12T18:05:27.814369237 0.057693s notice: Listening for client driver connections on port 28015
+2018-08-12T18:05:27.814541417 0.057866s notice: Listening for administrative HTTP connections on port 8080
+2018-08-12T18:05:27.814543777 0.057868s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2018-08-12T18:05:27.814546608 0.057871s notice: Listening on driver addresses: 127.0.0.1, ::1
+2018-08-12T18:05:27.814548263 0.057872s notice: Listening on http addresses: 127.0.0.1, ::1
+2018-08-12T18:05:27.814550787 0.057875s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2018-08-12T18:05:27.814554357 0.057878s notice: Server ready, "ip_10_0_0_12_tjr" b50e3aec-223e-4e73-a477-98dbf7045c0b
+2018-08-12T18:05:37.523864853 9.767189s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2018-08-12T18:05:37.523932390 9.767257s notice: Shutting down client connections...
+2018-08-12T18:05:37.524010020 9.767334s notice: All client connections closed.
+2018-08-12T18:05:37.524012851 9.767337s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2018-08-12T18:05:37.524216200 9.767541s notice: Storage engine shut down.
+2018-08-12T18:06:00.361717362 0.009597s notice: Running rethinkdb 2.3.6~0xenial (GCC 5.3.1)...
+2018-08-12T18:06:00.363795407 0.011677s notice: Running on Linux 4.4.0-1022-aws x86_64
+2018-08-12T18:06:00.363834690 0.011715s notice: Loading data from directory /home/ubuntu/alluvium/src/stream/bolt/rethinkdb_data
+2018-08-12T18:06:00.374067664 0.021949s info: Automatically using cache size of 2556 MB
+2018-08-12T18:06:00.374551790 0.022432s notice: Listening for intracluster connections on port 29015
+2018-08-12T18:06:00.375753540 0.023634s notice: Listening for client driver connections on port 28015
+2018-08-12T18:06:00.375931130 0.023811s notice: Listening for administrative HTTP connections on port 8080
+2018-08-12T18:06:00.375933370 0.023813s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2018-08-12T18:06:00.375936024 0.023816s notice: Listening on driver addresses: 127.0.0.1, ::1
+2018-08-12T18:06:00.375937961 0.023818s notice: Listening on http addresses: 127.0.0.1, ::1
+2018-08-12T18:06:00.375940693 0.023820s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2018-08-12T18:06:00.375943330 0.023823s notice: Server ready, "ip_10_0_0_12_tjr" b50e3aec-223e-4e73-a477-98dbf7045c0b
+2018-08-12T18:09:29.831027830 209.478908s notice: Server got SIGINT from pid 0, uid 0; shutting down...
+2018-08-12T18:09:29.831104014 209.478984s notice: Shutting down client connections...
+2018-08-12T18:09:29.831192455 209.479072s notice: All client connections closed.
+2018-08-12T18:09:29.831202126 209.479082s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2018-08-12T18:09:29.831430915 209.479311s notice: Storage engine shut down.
