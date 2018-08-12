@@ -19,7 +19,7 @@ producer = KafkaProducer(bootstrap_servers=conn)
 app.config.update(dict(
     DEBUG=True,
     SECRET_KEY='secret!',
-    DB_HOST='localhost',
+    DB_HOST='10.0.0.11',
     DB_PORT=28015,
     DB_NAME='alluvium'
 ))
