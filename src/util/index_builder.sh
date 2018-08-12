@@ -1,6 +1,6 @@
 # When setting a new index
 
-curl -X PUT "localhost:9200/latin-index" -H 'Content-Type: application/json' -d'
+curl -X PUT "localhost:9200/my-index" -H 'Content-Type: application/json' -d'
 {
     "mappings": {
         "_doc": {
