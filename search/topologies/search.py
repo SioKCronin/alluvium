@@ -9,4 +9,4 @@ from bolts.search import SearchBolt
 
 class Search(Topology):
     docs_spout = DocsSpout.spec()
-    search_bolt = SearchBolt.spec(inputs={docs_spout: Grouping.fields('doc')})
+    search_bolt = SearchBolt.spec(inputs=[docs_spout])
