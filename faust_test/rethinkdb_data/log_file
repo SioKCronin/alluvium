@@ -1,0 +1,15 @@
+2018-08-12T18:33:16.486267000 0.166902s notice: Recursively removing directory /Users/siobhan/Code/alluvium/faust_test/rethinkdb_data/tmp
+2018-08-12T18:33:16.491455000 0.172099s notice: Initializing directory /Users/siobhan/Code/alluvium/faust_test/rethinkdb_data
+2018-08-12T18:33:16.491692000 0.172326s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/Users/siobhan/Code/alluvium/faust_test/rethinkdb_data' did not already exist or is empty.)
+2018-08-12T18:33:16.491821000 0.172455s notice: Running rethinkdb 2.3.6 (CLANG 9.0.0 (clang-900.0.37))...
+2018-08-12T18:33:16.502134000 0.182768s notice: Running on Darwin 17.7.0 x86_64
+2018-08-12T18:33:16.502259000 0.182893s notice: Loading data from directory /Users/siobhan/Code/alluvium/faust_test/rethinkdb_data
+2018-08-12T18:33:16.727562000 0.408189s info: Automatically using cache size of 1000 MB
+2018-08-12T18:33:16.734967000 0.415594s notice: Listening for intracluster connections on port 29015
+2018-08-12T18:33:16.739024000 0.419650s notice: Listening for client driver connections on port 28015
+2018-08-12T18:33:16.739287000 0.419913s notice: Listening for administrative HTTP connections on port 8080
+2018-08-12T18:33:16.739294000 0.419920s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2018-08-12T18:33:16.739313000 0.419939s notice: Listening on driver addresses: 127.0.0.1, ::1
+2018-08-12T18:33:16.739318000 0.419944s notice: Listening on http addresses: 127.0.0.1, ::1
+2018-08-12T18:33:16.739331000 0.419957s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2018-08-12T18:33:16.739347000 0.419973s notice: Server ready, "MacBook_Air_2_local_tam" d243f106-9233-415b-ab42-196734ae4cd0
