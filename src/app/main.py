@@ -12,7 +12,8 @@ socketio = SocketIO(app)
 global thread
 thread = None
 
-conn = 'ec2-52-13-241-228.us-west-2.compute.amazonaws.com:9092'
+# Kafka host
+conn = '10.0.0.14:9092'
 producer = KafkaProducer(bootstrap_servers=conn)
 
 # Load default config and override config from an environment variable
