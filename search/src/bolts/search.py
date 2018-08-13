@@ -1,20 +1,20 @@
-import os
-from collections import Counter
-
 from streamparse import Bolt
+import rethinkdb as r
+from elasticsearch import Elasticsearch
+import json
 
 
 class SearchBolt(Bolt):
     outputs = ['match_record']
 
-    def initialize(self):
-        self.db = r.connect(host='10.0.0.11', port='28015', db='alluvium')
+    def initialize(self, stormconf, context):
+        self.db = r.connect(host='ec2-54-202-215-9.us-west-2.compute.amazonaws.com', port='28015', db='alluvium')
         self.es = Elasticsearch()
         self.total = 0
 
     def process(self, tup):
-        doc = tup.values[0]
-        data = json.loads(doc.value.decode("utf-8").rstrip(','))
+        d = tup.values.doc[6].rstrip(',')
+        data = json.loads(d)
         doc = {
             "query" : {
                 "percolate" : {
@@ -30,14 +30,10 @@ class SearchBolt(Bolt):
 
         # Write matches to RethinkDB
         if res['hits']['total'] > 0:
-            match = json.loads(doc.value.decode('utf-8').strip(','))
             for hit in res['hits']['hits']:
-                new_match = self.db.table("queries").insert([{
+                new_match = r.table("queries").insert([{
                     "query_id": hit['_id'],
-                    "article": match['article'],
-                    "user_id": match['user_id']
-                }]).run(conn)
-                print("Found match",new_match)
-
-        else:
-            print("Not match")
+                    "article": data['article'],
+                    "user_id": data['user_id']
+                }]).run(self.db)
+        self.emit([res])
