@@ -36,5 +36,5 @@ disambiguation pages)
 * Broker tuning (leader balancing)
 * Consumer tuning
 
-#### Specs/Constraints
-* Presently, can return match results at a rate of 0 records/second (room for improvement!)
+#### Performance
+* Currently **3 registered queries** found in an average of **40 milliseconds** in stream of **100 records/second**
