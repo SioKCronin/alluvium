@@ -36,5 +36,5 @@ disambiguation pages)
 * Broker tuning (leader balancing)
 * Consumer tuning
 
-#### Performance
+### Performance
 * Currently **3 registered queries** found in an average of **40 milliseconds** in stream of **100 records/second**
