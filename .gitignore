@@ -1,3 +1,6 @@
-config*
-*.swp
+.DS_Store
+_build
+_resources
+logs
 *.pyc
+*.swp
