@@ -2,18 +2,20 @@ from elasticsearch import Elasticsearch
 import hashlib
 from kafka import KafkaConsumer
 
-def build_query(term):
-    query_id = hashlib.md5(query_term.encode('utf-8')).hexdigest() 
+# queries = ["example"]
+
+def build_query(queries):
     es = Elasticsearch()
-    query =  {"query" : { "match" : {"message" : query_term}}}
-    es.index(index="my-index", doc_type="_doc", body=query, id=query_id)
+    for query in queries:
+        query_term = query.value.decode("utf-8").strip()
+        query_id = hashlib.md5(query_term.encode('utf-8')).hexdigest() 
+        query =  {"query" : { "match" : {"message" : query_term}}}
+        es.index(index="my-index", doc_type="_doc", body=query, id=query_id)
 
 if __name__ == '__main__':
-    conn = 'ec2-52-13-241-228.us-west-2.compute.amazonaws.com:9092'
+    conn = '10.0.0.14:9092'
     queries = KafkaConsumer('queries', bootstrap_servers=conn)
-
-    for query in queries:
-        build_query(query.value.decode("utf-8").strip())
+    build_query(queries)
 
 '''
 If you encounter the following error:
