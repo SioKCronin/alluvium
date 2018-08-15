@@ -42,6 +42,8 @@ if __name__ == "__main__":
 
         res = es.search(index="my-index", doc_type="_doc", body=doc)
 
+        print(res)
+
         # Write matches to RethinkDB
         if res['hits']['total'] > 0:
             match = json.loads(msg.value.decode('utf-8').strip(','))
@@ -51,7 +53,8 @@ if __name__ == "__main__":
                 found_match = r.table("queries").insert([{
                     "query_id": hit['_id'],
                     "article": match['article'],
-                    "user_id": match['user_id']
+                    "user_id": match['user_id'],
+                    "time": time.time()
                 }]).run(conn)
                 print(found_match)
 

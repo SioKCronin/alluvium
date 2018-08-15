@@ -2,6 +2,7 @@ from streamparse import Bolt
 import rethinkdb as r
 from elasticsearch import Elasticsearch
 import json
+import time
 
 
 class SearchBolt(Bolt):
@@ -34,6 +35,7 @@ class SearchBolt(Bolt):
                 new_match = r.table("queries").insert([{
                     "query_id": hit['_id'],
                     "article": data['article'],
-                    "user_id": data['user_id']
+                    "user_id": data['user_id'],
+                    "time": time.time()
                 }]).run(self.db)
         self.emit([res])

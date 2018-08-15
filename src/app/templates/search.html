@@ -6,7 +6,16 @@
 
 <h5>Search results for <span class="blue-text">{{ query }}</span></h5>
 
-<table id="result-list" class="collection"></table>
+<table class="collection">
+    <thead>
+        <tr>
+            <th>Aritle</th>
+            <th>User</th>
+            <th>Time</th>
+        </tr>
+    </thead>
+    <tbody id="result-list"></tbody>
+</table>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.8.1/axios.min.js"></script>
 <script>
@@ -15,7 +24,7 @@ var socket = io('http://' + document.domain + ':' + location.port);
 
 // event handler for receiving a 'new_result' event on the socket.
 socket.on('new_result', function(data) {
-    resultList.innerHTML = '<tr><td>'+'ARTICLE:'+data.new_val.article+'</td><td>'+'USER_ID:'+" "+data.new_val.user_id+'</td><td>' + data.new_val.time + '</td></tr>' + resultList.innerHTML;
+    resultList.innerHTML = '<tr><td>' + data.new_val.article + '</td><td>' + data.new_val.user_id+'</td><td>' + data.new_val.time + '</td></tr>' + resultList.innerHTML;
 });
 
 // log general messages
