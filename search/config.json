@@ -17,7 +17,6 @@
                 "backup_count": 10,
                 "level": "info"
             },
-            "use_ssh_for_nimbus": true,
             "virtualenv_root": "virtualenvs/"
         }
     }

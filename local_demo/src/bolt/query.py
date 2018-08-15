@@ -20,6 +20,9 @@ if __name__ == "__main__":
     c = '10.0.0.14:9092'
     docs = KafkaConsumer('docs', bootstrap_servers=c)
 
+    # List to Kafka query topic
+    c = '10.0.0.14:9092'
+
     # Create Elasticsearch instance
     es = Elasticsearch()
 

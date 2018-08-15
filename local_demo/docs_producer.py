@@ -16,6 +16,7 @@ def main():
 
     for i in range(1000):
         print(int(time.time()))
+        #for line in smart_open('s3://alluvium-data/sample_tweets.json'):
         for line in smart_open('s3://alluvium-data/mvp_docs.json'):
             #print(line.strip())
             producer.send('docs', line.strip())

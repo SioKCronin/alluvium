@@ -1,6 +1,0 @@
-{"type": "query-terms", "terms": ["hate", "stupid"], min-match": 1}
-{"type": "query-terms", "terms": ["puppies", "rainbows"], "min-match": 1}
-{"type": "query-terms", "terms": ["simple", "the"], "min-match": 2}
-{"type": "query-terms", "terms": ["love", "hate"], "min-match": 2}
-
-
