@@ -66,7 +66,8 @@ def test_connect():
 
 @socketio.on('disconnect')
 def test_disconnect():
-    print('Client disconnected')
+    if app.config['DEBUG']:
+        print('Client disconnected')
 
 # TODO: When socket disconnects, remove query from db (or set a timer)?
 
@@ -81,8 +82,9 @@ def watch_results():
                      db=app.config['DB_NAME'])
     feed = r.table("queries").changes().run(conn)
     for result in feed:
-        print("Found it")
-        print(result)
+        if app.config['DEBUG']:
+            print("Found it")
+            print(result)
         #result['new_val']['created'] = str(result['new_val']['created'])
         # emit to a specific client the results when they come into
         # rethinkdb for that client's query.
