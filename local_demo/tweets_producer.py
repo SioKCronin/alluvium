@@ -15,12 +15,10 @@ def main():
     for line in smart_open('s3://alluvium-data/sample_tweets.json'):
         data = json.loads(line.decode("utf-8").strip())
         if 'delete' in data:
-            pass
+            continue
         else:
             producer.send('tweets', {'tweet_id': data['id_str'],
-                                   'screen_name': data['entities']['screen_name'],
-                                   'followers': data['entities']['followers_count'], 
-                                   'text': data['text']})
+                                     'text': data['text']})
             producer.flush()
             time.sleep(.01)
 
