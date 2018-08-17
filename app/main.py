@@ -54,7 +54,9 @@ def create_search():
         data['query_id'] = hashlib.md5(data['query'].encode('utf-8')).hexdigest()
         session['query_id'] = data['query_id']
         # Publish data to Kafka queries topic
-        producer.send("queries", bytes(json.dumps(data).encode('utf-8')))
+        #producer.send("queries", bytes(json.dumps(data).encode('utf-8')))
+        producer.send("queries", data['query'])
+
 
         #new_chat = r.table("queries").insert([ data ]).run(g.db_conn)
         return render_template('search.html', query=data['query'], room=data['query_id'])

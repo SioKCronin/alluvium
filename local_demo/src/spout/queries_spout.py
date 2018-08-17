@@ -1,11 +1,4 @@
-import sys
-import boto3
-import boto
-import json
-import botocore
-from ast import literal_eval
-from smart_open import smart_open, s3_iter_bucket
-from kafka import KafkaProducer
+from kafka import KafkaConsumer
 import time
 from streamparse.spout import Spout
 
