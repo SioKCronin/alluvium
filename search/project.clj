@@ -1,4 +1,4 @@
-(defproject wordcount "0.0.1-SNAPSHOT"
+(defproject search "0.0.1-SNAPSHOT"
   :resource-paths ["_resources"]
   :target-path "_build"
   :min-lein-version "2.0.0"

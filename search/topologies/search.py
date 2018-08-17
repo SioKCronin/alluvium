@@ -3,8 +3,8 @@ Search topology
 """
 
 from streamparse import Grouping, Topology
-from src.spouts.docs import DocsSpout
-from src.bolts.search import SearchBolt
+from spouts.docs import DocsSpout
+from bolts.search import SearchBolt
 
 
 class Search(Topology):
