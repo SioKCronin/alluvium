@@ -55,7 +55,7 @@ def create_search():
         session['query_id'] = data['query_id']
         # Publish data to Kafka queries topic
         #producer.send("queries", bytes(json.dumps(data).encode('utf-8')))
-        producer.send("queries", data['query'])
+        producer.send("queries", bytes(data['query']))
 
 
         #new_chat = r.table("queries").insert([ data ]).run(g.db_conn)
