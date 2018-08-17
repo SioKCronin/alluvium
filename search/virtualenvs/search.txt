@@ -1,1 +1,4 @@
 streamparse # always required for streamparse projects
+kafka
+elasticsearch
+rethinkdb

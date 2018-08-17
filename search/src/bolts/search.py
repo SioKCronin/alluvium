@@ -38,4 +38,4 @@ class SearchBolt(Bolt):
                     "text": data['text'],
                     "time": int((time.time() - in_time)*1000)
                 }]).run(self.db)
-        #self.emit([res])
+        self.emit([res])

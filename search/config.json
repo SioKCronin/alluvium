@@ -13,7 +13,7 @@
                 "backup_count": 10,
                 "level": "info"
             },
-            "virtualenv_root": "virtualenvs/"
+            "virtualenv_root": "/home/ubuntu/virtualenvs/"
         }
     }
 }
