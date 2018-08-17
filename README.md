@@ -33,4 +33,4 @@ Alluvium.
 * Pipeline metrics
 
 ### Performance
-* Currently **200 registered queries** are found in an average of **40 milliseconds** in **1,000 records/second** stream.
+* Currently clocking an average of **40 milliseconds per search** on a **40 records/second** stream.
