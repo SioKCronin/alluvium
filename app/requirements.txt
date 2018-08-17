@@ -1,3 +1,4 @@
-Flask==1.0.2
-Flask-SocketIO==3.0.1
-rethinkdb==2.3.0.post6
+Flask==0.10.1
+Flask-SocketIO==1.2
+greenlet==0.4.9
+rethinkdb==2.2.0.post2
