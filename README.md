@@ -2,7 +2,7 @@
 
 # Alluvium
 
-A realtime streaming search platform in Python. 
+A scalable realtime streaming search platform. 
 
 ## Overview
 Alluvium provides a clean, scalable architecture in Python for realtime streaming search. Realtime search provides insight
