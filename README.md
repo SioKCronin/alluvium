@@ -32,4 +32,4 @@ Alluvium.
 * Pipeline metrics
 
 ## Performance monitoring
-* Currently clocking an average of **40 milliseconds per search** on a **40 records/second** stream.
+* Currently clocking an average of **40 milliseconds per search** on a **500 records/second** stream.
