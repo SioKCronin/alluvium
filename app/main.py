@@ -1,4 +1,4 @@
-from flask import Flask, g, render_template, make_response, request, redirect, url_for, jsonify, session
+fom flask import Flask, g, render_template, make_response, request, redirect, url_for, jsonify, session
 from flask_socketio import SocketIO, send, emit, join_room, leave_room
 from threading import Thread
 import rethinkdb as r
@@ -18,7 +18,7 @@ producer = KafkaProducer(bootstrap_servers=conn)
 
 # Load default config and override config from an environment variable
 app.config.update(dict(
-    DEBUG=True,
+    DEBUG=False,
     SECRET_KEY='secret!',
     DB_HOST='10.0.0.11',
     DB_PORT=28015,
@@ -54,10 +54,7 @@ def create_search():
         data['query_id'] = hashlib.md5(data['query'].encode('utf-8')).hexdigest()
         session['query_id'] = data['query_id']
         # Publish data to Kafka queries topic
-        #producer.send("queries", bytes(json.dumps(data).encode('utf-8')))
         producer.send("queries", bytes(data['query']))
-
-
         #new_chat = r.table("queries").insert([ data ]).run(g.db_conn)
         return render_template('search.html', query=data['query'], room=data['query_id'])
     return make_response('no search param', 401)
@@ -70,8 +67,6 @@ def test_connect():
 def test_disconnect():
     if app.config['DEBUG']:
         print('Client disconnected')
-
-# TODO: When socket disconnects, remove query from db (or set a timer)?
 
 @app.route('/', methods=['GET'])
 def index():
