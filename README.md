@@ -2,7 +2,7 @@
 
 # Alluvium
 
-A scalable realtime streaming search platform ([DEMO](http://alluvium.online:8000/))
+A scalable realtime streaming search platform
 
 ## Overview
 Alluvium provides a clean, scalable architecture in Python for realtime streaming search. Realtime search provides insight
