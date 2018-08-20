@@ -9,7 +9,9 @@
 <table class="collection">
     <thead>
         <tr>
-            <th>Tweet text</th>
+            <th>User</th>
+            <th>Tweet</th>
+            <th>Timestamp</th>
         </tr>
     </thead>
     <tbody id="result-list"></tbody>
@@ -22,7 +24,8 @@ var socket = io('http://' + document.domain + ':' + location.port);
 
 // event handler for receiving a 'new_result' event on the socket.
 socket.on('new_result', function(data) {
-    resultList.innerHTML = '<tr><td>' + data.new_val.text+'</td><td>' + resultList.innerHTML;
+    resultList.innerHTML = '<tr><td>' + data.new_val.user+'</td><td>'+data.new_val.text+'</td><td>' + 
+        data.new_val.timestamp+'</td></tr>' resultList.innerHTML;
 });
 
 // log general messages

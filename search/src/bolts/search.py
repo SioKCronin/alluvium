@@ -34,8 +34,8 @@ class SearchBolt(Bolt):
             for hit in res['hits']['hits']:
                 new_match = r.table("queries").insert([{
                     "query_id": hit['_id'],
-                    #"tweet_id": data['id_str'],
-                    "text": data['text']
-                    #"time": int((time.time() - in_time)*1000)
+                    "user": data['user']['screen_name'],
+                    "text": data['text'],
+                    "timestamp": data['created_at']
                 }]).run(self.db)
         self.emit([res])

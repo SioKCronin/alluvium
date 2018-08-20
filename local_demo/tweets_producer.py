@@ -20,7 +20,7 @@ def main():
                 print("Count:", count,"at time diff:", time.time()*1000 - t)
             count += 1
             #data = json.loads(line.decode("utf-8").strip())
-            producer.send('tweets', line)
+            producer.send('cleaned_tweets', line)
         producer.flush()
         #time.sleep(.01)
 
