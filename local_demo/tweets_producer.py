@@ -7,7 +7,7 @@ import time
 
 def main():
 
-    conn = 'ec2-52-13-241-228.us-west-2.compute.amazonaws.com:9092'
+    conn = '10.0.0.14:9092'
     producer = KafkaProducer(bootstrap_servers=conn)
     t = time.time() * 1000
     count = 0

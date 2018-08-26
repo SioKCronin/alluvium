@@ -11,7 +11,8 @@ from streamparse.bolt import Bolt
 
 class QuerySearchBolt(Bolt):
 
-    conn = 'ec2-52-13-241-228.us-west-2.compute.amazonaws.com:9092'
+    #conn = 'ec2-52-13-241-228.us-west-2.compute.amazonaws.com:9092'
+    conn = '10.0.0.14:9092'
     docs = KafkaConsumer('docs', bootstrap_servers=conn)
     producer = KafkaConsumer('match', bootstrap_servers=conn)
     es = Elasticsearch()

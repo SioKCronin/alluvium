@@ -9,7 +9,7 @@ class SearchBolt(Bolt):
     outputs = ['match_record']
 
     def initialize(self, stormconf, context):
-        self.db = r.connect(host='ec2-54-202-215-9.us-west-2.compute.amazonaws.com', port='28015', db='alluvium')
+        self.db = r.connect(host='10.0.0.11', port='28015', db='alluvium')
         self.es = Elasticsearch()
 
     def process(self, tup):

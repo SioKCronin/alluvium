@@ -8,7 +8,7 @@ class DocsSpout(Spout):
     outputs = ['doc']
 
     def initialize(self, stormconf, context):
-        c = 'ec2-52-13-241-228.us-west-2.compute.amazonaws.com'
+        c = '10.0.0.14'
         self.docs = KafkaConsumer('cleaned_tweets', bootstrap_servers=c)
 
     def next_tuple(self):

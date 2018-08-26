@@ -4,7 +4,6 @@ from smart_open import smart_open, s3_iter_bucket
 from kafka import KafkaProducer
 import time
 
-
 def main():
 
     conn = 'ec2-52-13-241-228.us-west-2.compute.amazonaws.com:9092'
