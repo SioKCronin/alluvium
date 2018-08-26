@@ -1,8 +1,10 @@
+![sample](https://github.com/SioKCronin/alluvium/blob/master/media/sample_results.png)
+
 # Alluvium
 
-A realtime streaming search platform in Python. 
+A scalable realtime streaming search platform
 
-### Introduction
+## Overview
 Alluvium provides a clean, scalable architecture in Python for realtime streaming search. Realtime search provides insight
 into high velocity feeds, with applications ranging from media monitoring to up-to-date anti-vandelism detection
 notifications.
@@ -16,21 +18,18 @@ remove queries from the list? How shall we scale the processing distribution to 
 as well as an increase in number and complexity of queries? These are some of the questions I've been addressing with
 Alluvium.
 
-### Architecture
-* **AWS (S3)**: Documents + queries
+## Architecture
+* **AWS (S3)**: Simulated firehose of tweets from 2012
 * **Kakfa**: Scalable, fault-tolerant message delivery
 * **Storm**: Event-based stream processing
-* **Elasticsearch**: Document indexing with Percolator queries
-* **RethinkDB**: Data store
-* **Flask-Socket.io**: Server socket connection to browser
+* **Elasticsearch**: Tweet search with percolator index
+* **RethinkDB**: Key-value data store
+* **Flask-Socket.io**: Server socket connection deivering real-time results to client
 
-### Twitter Data
-* Sample JSON tweet data from a selection of the 300+ million registered users
-
-### Engineering Challenges
+## Engineering Challenges
 * Kafka tuning
 * Storm topology configuration and deployment in Python
 * Pipeline metrics
 
-### Performance
-* Currently clocking an average of **40 milliseconds per search** on a **40 records/second** stream.
+## Performance monitoring
+* Currently clocking an average of **4 milliseconds per search** on a **2000 tweets/second** stream.
