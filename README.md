@@ -2,7 +2,7 @@
 
 # Alluvium
 
-!(DEMO)[https://drive.google.com/file/d/12r1yYzYH6fVG5--n2Bxet_4_8Loi1dbs/view]
+[DEMO](https://drive.google.com/file/d/12r1yYzYH6fVG5--n2Bxet_4_8Loi1dbs/view)
 
 A scalable realtime streaming search platform
 
