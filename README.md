@@ -1,10 +1,9 @@
 ![sample](https://github.com/SioKCronin/alluvium/blob/master/media/sample_results.png)
 
 # Alluvium
+A scalable realtime streaming search platform
 
 [DEMO](https://drive.google.com/file/d/12r1yYzYH6fVG5--n2Bxet_4_8Loi1dbs/view)
-
-A scalable realtime streaming search platform
 
 ## Overview
 Alluvium provides a clean, scalable architecture in Python for realtime streaming search. Realtime search provides insight
