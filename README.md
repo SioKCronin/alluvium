@@ -8,7 +8,7 @@ A scalable realtime streaming search platform
 ## Overview
 Alluvium provides a clean, scalable architecture in Python for realtime streaming search. Realtime search provides insight
 into high velocity feeds, with applications ranging from media monitoring to up-to-date anti-vandelism detection
-notifications. A practical example would monitoring community health by tracking the frequency of words in the Twitte feed 
+notifications. A practical example is monitoring community health by tracking the frequency of words in the Twitte feed 
 that correlate with heart disease mortality rates, as presented by [Eichstaedt et al](http://journals.sagepub.com/doi/abs/10.1177/0956797614557867) in 2015. 
 
 Achieving realtime search in high volume streams presents a unique set of engineering challenges. 
