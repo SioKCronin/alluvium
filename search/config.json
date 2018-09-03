@@ -6,7 +6,8 @@
         "prod": {
             "user": "ubuntu",
             "nimbus": "ec2-35-166-94-230.us-west-2.compute.amazonaws.com",
-            "workers": ["ec2-35-166-94-230.us-west-2.compute.amazonaws.com"],
+            "workers": ["ec2-52-26-74-60.us-west-2.compute.amazonaws.com",
+                      "ec2-34-213-113-80.us-west-2.compute.amazonaws.com"],
             "log": {
                 "path": "",
                 "max_bytes": 100000,
