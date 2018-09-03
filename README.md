@@ -26,7 +26,7 @@ Alluvium.
 * **Storm**: Event-based stream processing
 * **Elasticsearch**: Tweet search with percolator index
 * **RethinkDB**: Key-value data store
-* **Flask-Socket.io**: Server socket connection deivering real-time results to client
+* **Flask-Socket.io**: Server socket connection delivering real-time results to client
 
 ## Engineering Challenges
 * Kafka tuning
