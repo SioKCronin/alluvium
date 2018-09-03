@@ -6,3 +6,5 @@
 * Flask-Session
 * SocketIO
 * RethinkDB (https://rethinkdb.com/docs/install/ubuntu/)
+* Streamparse (https://streamparse.readthedocs.io/en/stable/quickstart.html)
+* virtualenv (apt install virtualenv)
