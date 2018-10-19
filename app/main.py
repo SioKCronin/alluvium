@@ -1,4 +1,4 @@
-fom flask import Flask, g, render_template, make_response, request, redirect, url_for, jsonify, session
+from flask import Flask, g, render_template, make_response, request, redirect, url_for, jsonify, session
 from flask_socketio import SocketIO, send, emit, join_room, leave_room
 from threading import Thread
 import rethinkdb as r
