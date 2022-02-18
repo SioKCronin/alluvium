@@ -14,7 +14,7 @@ that correlate with heart disease mortality rates, as presented by [Eichstaedt e
 Achieving realtime search in high volume streams presents a unique set of engineering challenges. 
 For example, when we search in a static setting we typically create an index on the document we are searching, which is 
 often not feasible in high-volume streams. This limitation led to the development of reverse search where queries are indexed 
-and matched against a tokenized stream of text. Solme challenges emerge as additional queries are added. Should we tokenize
+and matched against a tokenized stream of text. Some challenges emerge as additional queries are added. Should we tokenize
 the streaming documents for each query, or tokenize them once and run them against several queries in batches? How should we 
 remove queries from the list? How shall we scale the processing distribution to handle both an increase in document volume 
 as well as an increase in number and complexity of queries? These are some of the questions I've been addressing with
